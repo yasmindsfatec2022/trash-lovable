@@ -48,7 +48,7 @@ const Dashboard = () => {
   };
 
   return (
-    <section className="py-20 px-4 bg-secondary/30">
+    <section id="dashboard" className="py-20 px-4 bg-secondary/30">
       <div className="container mx-auto max-w-6xl">
         <div className="mb-12 text-center">
           <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">

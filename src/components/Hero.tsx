@@ -1,13 +1,21 @@
-import { Trash2, TrendingDown } from "lucide-react";
+import { Trash2, TrendingDown, Recycle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Hero = () => {
+  const scrollToDashboard = () => {
+    const element = document.getElementById("dashboard");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-hero py-24 px-4">
+    <section className="relative overflow-hidden bg-gradient-hero py-32 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center text-white">
           <div className="mb-6 flex justify-center">
-            <div className="rounded-full bg-white/10 p-6 backdrop-blur-sm">
-              <Trash2 className="h-16 w-16" />
+            <div className="rounded-full bg-white/10 p-6 backdrop-blur-sm shadow-lg">
+              <Recycle className="h-16 w-16" />
             </div>
           </div>
           
@@ -19,7 +27,7 @@ const Hero = () => {
             Monitoramento inteligente de lixeiras
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 text-sm">
+          <div className="mb-8 flex flex-wrap justify-center gap-4 text-sm">
             <div className="flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 backdrop-blur-sm">
               <TrendingDown className="h-4 w-4" />
               <span>Redução de custos</span>
@@ -29,6 +37,14 @@ const Hero = () => {
               <span>Coleta otimizada</span>
             </div>
           </div>
+
+          <Button 
+            size="lg" 
+            onClick={scrollToDashboard}
+            className="bg-white text-foreground hover:bg-white/90 shadow-lg"
+          >
+            Ver Dashboard
+          </Button>
         </div>
       </div>
       
